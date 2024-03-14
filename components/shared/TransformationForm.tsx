@@ -175,9 +175,9 @@ const TransformationForm = ({
           [fieldName === "prompt" ? "prompt" : "to"]: value,
         },
       }));
-
-      return onChangeField(value);
-    }, 1000); //while taking input it'll wait for a sec before sending request for each input character
+    }, 1000)();           //while taking input it'll wait for a sec before sending request for each input character, convert it to a self-invoked function by adding (), else it won't get called
+  
+    return onChangeField(value);
   };
 
   const onTransformHandler = async () => {
