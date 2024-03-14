@@ -60,7 +60,7 @@ const TransformedImage = ({
                 onError={() => {
                     debounce(() => {
                         setIsTransforming && setIsTransforming(false);
-                    }, 8000)
+                    }, 8000)()                      //this function won't be called on its own , hence to invoke it we add the extra() after 8000, converting it into a self-invoked function expression
                 }}
                 {...transformationConfig}
             />
@@ -71,8 +71,9 @@ const TransformedImage = ({
                         src="/assets/icons/spinner.svg"
                         width={50}
                         height={50}
-                        alt="Transforming"
+                        alt="spinner"
                     />
+                    <p className="text-white/80">Please wait...</p>
                 </div>
             )}
         </div>
