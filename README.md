@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🤖 pixMorph
+
+pixMorph is a SaaS (Software as a Service) app that leverages AI features for image manipulation and enhancement. It integrates with Next.js 14 for frontend development, Clerk for authentication, MongoDB for data storage, Cloudinary AI for image processing, and Stripe for handling payments and credits.
+
+## 🚀Features
+
+- **Cloudinary AI Integration:** Utilizes Cloudinary AI tools to implement various image manipulation features such as object recolor, object removal, background removal, and generative fill.
+- **Authentication with Clerk:** Secure user authentication and management powered by Clerk, allowing users to create accounts, log in, and access their personalized content.
+- **Stripe Payment Gateway:** Integrated Stripe for handling payments and implementing a credits system. New users receive 10 free credits upon signup and can purchase additional credits for image processing tasks.
+- **MongoDB Data Storage:** Data persistence and storage using MongoDB, ensuring reliable and scalable data management for user accounts, credits, and image processing results.
 
 ## Getting Started
 
-First, run the development server:
+To run the pixMorph app locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/crystinameth/PixMorph.git
+   cd PixMorph
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Installation:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   npm install
 
-## Learn More
+3. Set Up Environment Variables:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   #NEXT
+   NEXT_PUBLIC_SERVER_URL=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   #MONGODB
+   MONGODB_URL=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   #CLERK
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
+   WEBHOOK_SECRET=
 
-## Deploy on Vercel
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   #CLOUDINARY
+   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+   CLOUDINARY_API_KEY=
+   CLOUDINARY_API_SECRET=
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   #STRIPE
+   STRIPE_SECRET_KEY=
+   STRIPE_WEBHOOK_SECRET=
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+  Replace the placeholder values with your actual respective account credentials. You can obtain these credentials by signing up on [Clerk](https://clerk.com/), [MongoDB](https://www.mongodb.com/), [Cloudinary](https://cloudinary.com/) and [Stripe](https://stripe.com/in).
+
+4. Running the Project:
+
+   ```bash
+   npm run dev
+  Open http://localhost:3000 in your browser to view the project.
+
+## 📌Usage
+
+ - **Image Manipulation:** Upload images to the app and explore the Cloudinary AI features for object recoloring, object removal, background removal, and generative fill.
+ - **Credits System:** New users receive 10 free credits. Purchase additional credits via the Stripe payment gateway to access more image processing tasks.
+ - **User Management:** Use the Clerk authentication system for account creation, login, and personalized user experiences.
